@@ -1,0 +1,19 @@
+Name: Desert Race Game Prototype Map V2
+Liscence: CC Attribution
+Author: Batuhan13
+Link: https://sketchfab.com/3d-models/desert-race-game-prototype-map-v2-2ccd3dcbd197415d9f1b97c30b1248c5
+
+Name: Traffic Cones
+Liscence: CC
+Author: Quaternius
+Link: https://quaternius.com/packs/publictransport.html
+
+Name: Common Tree
+Liscence: CC
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatenature.html
+
+Name: Common Monster Truck (Tyers)
+Liscence: CC
+Author: DBDIEL
+Link: https://sketchfab.com/3d-models/monster-truck-3d-model-a8fedf8df8004f97b998cca206fb6c80

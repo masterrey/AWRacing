@@ -1,0 +1,69 @@
+Name: Tumbleweed
+Licence: CC Attribution
+Author: Biggreenorange
+Link: https://sketchfab.com/3d-models/tumbleweed-e9fa341c64fe4626b5d5b0052b0c0b64
+
+Name: Rock
+Licence: CC Attribution
+Author: Brokenvector
+Link: https://www.cgtrader.com/free-3d-models/exterior/landscape/low-poly-rock-pack
+
+Name: Scull
+Licence: Standart
+Author: Gabriel Bernardes
+Link: https://www.turbosquid.com/ru/3d-models/cactus-3d-model-1448632#
+
+Name: Rogers_Locomotive
+Licence: CC Attribution
+Author: Milapixia
+Link: https://sketchfab.com/3d-models/station-antiques-locomotive-cars-blocking-xyz-c1196cb3f1074266b0dd739ea9b5b916
+
+Name: Landscape
+Licence: Royalty Free License
+Author: Jurassicdinomax123
+Link: https://www.cgtrader.com/free-3d-models/exterior/landscape/low-poly-mountains-67623f68-5445-44fa-9945-72c06e20d247
+
+Name: Wagon
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Church
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: House
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Barrel
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Windmill
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Fence
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Wheel
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Water_Barrel
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b
+
+Name: Box634
+Licence: CC Attribution
+Author: Ariel Alves
+Link: https://sketchfab.com/3d-models/wild-west-town-low-poly-d7bdc97cc527484c98e119c425a6e05b

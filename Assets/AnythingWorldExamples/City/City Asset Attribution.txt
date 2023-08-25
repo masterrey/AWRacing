@@ -1,0 +1,114 @@
+Name: 1Story_Sign_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_2_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Stroy_Balcony_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Center_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Columns_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Double_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_GableRoof_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_RoundRoof
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Sidehouse_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Sign_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Stairs_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Wide_2Doors_Mat
+Licence: CC0
+Author: Quaternius
+Link:https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Wide_2Doors_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 2Story_Wide_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 3Story_Balcony_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name:3Story_Slim_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 3Story_Small_Mat
+Licence: CC0
+Author: Quaternius
+Link:https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 4Story_Center_Mat
+Licence: CC0
+Author: Quaternius
+Link:https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 4Story_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 4Story_Wide_2Doors_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 4Story_Wide_2Doors_Roof_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html
+
+Name: 6Story_Stack_Mat
+Licence: CC0
+Author: Quaternius
+Link: https://quaternius.com/packs/ultimatetexturedbuildings.html

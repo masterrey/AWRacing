@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0e2fa3afdb345b34f85b11801300e340
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - objectParent: {instanceID: 0}
+  - defaultRiggedScript: {fileID: 11500000, guid: 070bcd503675d784a96714fe4a828116,
+      type: 3}
+  - defaultVehicleScript: {fileID: 11500000, guid: 16399812777ed4d48beda28b2509eb63,
+      type: 3}
+  - defaultFlyingVehicleScript: {fileID: 11500000, guid: e6ece7e595dc53d4497b59abf9ccbf86,
+      type: 3}
+  - defaultFlockingScript: {fileID: 11500000, guid: feadae47a04fc2444a8bfaacfdbd18c2,
+      type: 3}
+  - defaultStaticScript: {instanceID: 0}
+  - defaultShaderScript: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

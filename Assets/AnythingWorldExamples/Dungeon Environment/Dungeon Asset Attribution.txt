@@ -1,0 +1,14 @@
+Name: Modular Dungeon Kit
+Liscence: CC attribution
+Author: HenryBoadle
+Link: https://sketchfab.com/3d-models/modular-dungeon-kit-ecbeefd3212f447ba2f10f1986ad5769
+
+Name:Dungeon door
+Liscence: CC Attribution
+Author: Pablo88
+Link: https://sketchfab.com/3d-models/dungeon-door-60f31a39baf74769b596c0ea0b119ff2
+
+Name:Lustre
+Liscence: CC Attribution
+Author: DJMaesen
+Link: https://sketchfab.com/3d-models/lustre-db4f3adce26742fca58b11b2bffe4a89
