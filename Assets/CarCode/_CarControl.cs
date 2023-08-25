@@ -20,11 +20,6 @@ public class _CarControl : MonoBehaviour
     [SerializeField] float[] gearRatio;
     [SerializeField] public float maxSpeed;
 
-    [Header("Reverse")]
-    [SerializeField] float reverseHoldTime = 2f;  
-    private float reverseTimer = 0f;  
-    private bool isReversing = false;
-
     [Header("lights")]
     [SerializeField] 
     Light[] BrakeLights;
@@ -33,7 +28,7 @@ public class _CarControl : MonoBehaviour
     // Private variables
     private Rigidbody rb;
     private int gear = 1;
-    private int lastGear = 1;
+   
     private float Rpms;
     private WheelFrictionCurve wfc;
 
@@ -42,6 +37,19 @@ public class _CarControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = centerMass;
         wfc = wheelColliderR[0].sidewaysFriction;
+    }
+
+    public float GetSpeed()
+    {
+        return rb.velocity.magnitude * 3.6f * Time.timeScale;
+    }
+    public float GetRPM()
+    {
+        return Rpms;
+    }   
+    public int GetGear()
+    {
+        return gear;
     }
 
     private void Update()
@@ -64,20 +72,20 @@ public class _CarControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftControl))
                 gear--;
 
-            gear = Mathf.Clamp(gear, 0, gearRatio.Length - 1);
+            gear = Mathf.Clamp(gear, -1, gearRatio.Length - 1);
         }
 
         if (Input.GetButtonDown("Jump"))
         {
             ApplyBrake(true);
-            lastGear = gear;
-            gear = 0;
+           
+           
         }
 
         if (Input.GetButtonUp("Jump"))
         {
             ApplyBrake(false);
-            gear = lastGear;
+          
         }
 
     }
@@ -100,7 +108,10 @@ public class _CarControl : MonoBehaviour
         float accel = Input.GetAxis("Vertical");
         float steerAngle = steer * maxSteerAngle;
         float brake = 0;
-        if(accel<0 &&rb.velocity.sqrMagnitude>0.1f)
+        float power=0;
+        float wheelRpmsTotal = 0;
+
+        if (accel<0)
         {
             brake=brakeTorque*Mathf.Abs(accel);
             BrakeLights[0].intensity = 1;
@@ -109,32 +120,52 @@ public class _CarControl : MonoBehaviour
         {
             BrakeLights[0].intensity = 0;
             BrakeLights[1].intensity = 0;
+ 
         }
+       
+
+      
+        if (Rpms < motorMaxRpm - 1000)
+        {
+            if(gear>0)
+                power = accel * motorPower * gearRatio[gear];
+        }
+        else
+        {
+            power = 0;
+            brake = Mathf.Abs(motorMaxRpm-Rpms);
+        }
+        if (gear == 0)
+            Rpms = Mathf.Lerp(Rpms, accel * motorMaxRpm, Time.deltaTime * 10);
+
+        if (gear == -1)
+            power = accel * -motorPower;
+       
 
         foreach (WheelCollider w in wheelColliderF)
         {
-            w.motorTorque = accel * motorPower/2 * gearRatio[gear];
+            w.motorTorque = power/2;
             w.steerAngle = steerAngle;
             w.brakeTorque = brake;
+            wheelRpmsTotal += w.rpm;
         }
 
-        float wheelRpmsTotal = 0;
+        
         foreach (WheelCollider w in wheelColliderR)
         {
-            if (gear > 0 && Rpms < motorMaxRpm - 1000)
-            {
-                w.motorTorque = accel * motorPower * gearRatio[gear];
-            }
-            else
-            {
-                w.motorTorque = 0;
-            }
+            w.motorTorque = power;
             wheelRpmsTotal += w.rpm;
             w.brakeTorque = brake*0.05f;
         }
 
-        // Calculate average RPM of the rear wheels
-        Rpms = Mathf.Lerp(Rpms, (wheelRpmsTotal * 4) * gearRatio[gear], Time.deltaTime * 10);
+        if (gear > 0)
+            Rpms = Mathf.Lerp(Rpms, wheelRpmsTotal * gearRatio[gear], Time.deltaTime * 10);
+        else if (gear == 0)
+            Rpms = Mathf.Lerp(Rpms, accel * motorMaxRpm, Time.deltaTime * 10);
+        else if (gear == -1)
+            Rpms = Mathf.Lerp(Rpms, -wheelRpmsTotal, Time.deltaTime * 10);  // Negative RPMs for reverse
+
         engineSound.pitch = Mathf.Lerp(0.5f, 2f, Rpms / motorMaxRpm) * 1.5f;
+        engineSound.volume = Mathf.Clamp(accel,0.3f,0.8f)+Rpms*0.0001f;
     }
 }
