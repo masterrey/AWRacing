@@ -57,15 +57,16 @@ public class _CarControl : MonoBehaviour
     private void Update()
     {
         HandleInputs();
-        if (isAutomaticGear)
-        {
-            AutoGearShift();
-        }
+       
     }
 
     void FixedUpdate()
     {
         HandleCarMovement();
+        if (isAutomaticGear)
+        {
+            AutoGearShift();
+        }
     }
 
     void AutoGearShift()
@@ -82,7 +83,10 @@ public class _CarControl : MonoBehaviour
         }
     }
 
-        void HandleInputs()
+    Vector3 vel;
+    Vector3 angvel;
+    bool drift = false;
+    void HandleInputs()
     {
         if (!Input.GetButton("Jump"))  // Check if brake is NOT pressed
         {
@@ -102,10 +106,36 @@ public class _CarControl : MonoBehaviour
            
         }
 
+        if (Input.GetButton("Jump"))
+        {
+
+            Drift();
+        }
+
         if (Input.GetButtonUp("Jump"))
         {
             ApplyBrake(false);
-          
+            drift = false;
+        }
+
+    }
+
+    void Drift()
+    {
+        var locVel = transform.InverseTransformDirection(rb.velocity);
+        Debug.Log(locVel.x);
+        if (Mathf.Abs(locVel.x) > 5)
+        {
+            if (!drift)
+            {
+                vel = rb.velocity;
+                angvel = rb.angularVelocity;
+            }
+            drift = true;
+            Vector3 newvel = (vel + transform.forward * vel.magnitude) * 0.5f;
+            rb.velocity = new Vector3(newvel.x, rb.velocity.y, newvel.z);
+            transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * 30);
+            rb.angularVelocity = angvel * 0.5f;
         }
 
     }
@@ -120,6 +150,7 @@ public class _CarControl : MonoBehaviour
         wfc.stiffness = brakeState ? 0.1f : 1.5f;
         wheelColliderR[0].sidewaysFriction = wfc;
         wheelColliderR[1].sidewaysFriction = wfc;
+       
     }
 
     void HandleCarMovement()
@@ -179,11 +210,11 @@ public class _CarControl : MonoBehaviour
         }
 
         if (gear > 0)
-            Rpms = Mathf.Lerp(Rpms, wheelRpmsTotal * gearRatio[gear], Time.deltaTime * 10);
+            Rpms = Mathf.Lerp(Rpms,1.2f* wheelRpmsTotal * gearRatio[gear], Time.fixedDeltaTime * 10);
         else if (gear == 0)
-            Rpms = Mathf.Lerp(Rpms, accel * motorMaxRpm, Time.deltaTime * 10);
+            Rpms = Mathf.Lerp(Rpms, accel * motorMaxRpm, Time.fixedDeltaTime * 10);
         else if (gear == -1)
-            Rpms = Mathf.Lerp(Rpms, -wheelRpmsTotal, Time.deltaTime * 10);  // Negative RPMs for reverse
+            Rpms = Mathf.Lerp(Rpms, -wheelRpmsTotal, Time.fixedDeltaTime * 10);  // Negative RPMs for reverse
 
         engineSound.pitch = Mathf.Lerp(0.5f, 2f, Rpms / motorMaxRpm) * 1.5f;
         engineSound.volume = Mathf.Clamp(accel,0.3f,0.8f)+Rpms*0.0001f;
