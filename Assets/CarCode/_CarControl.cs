@@ -31,6 +31,8 @@ public class _CarControl : MonoBehaviour
    
     private float Rpms;
     private WheelFrictionCurve wfc;
+    [SerializeField]
+    private bool isAutomaticGear;
 
     void Start()
     {
@@ -55,6 +57,10 @@ public class _CarControl : MonoBehaviour
     private void Update()
     {
         HandleInputs();
+        if (isAutomaticGear)
+        {
+            AutoGearShift();
+        }
     }
 
     void FixedUpdate()
@@ -62,7 +68,21 @@ public class _CarControl : MonoBehaviour
         HandleCarMovement();
     }
 
-    void HandleInputs()
+    void AutoGearShift()
+    {
+        // Auto shift up
+        if (Rpms > (motorMaxRpm - 1000) && gear < gearRatio.Length - 1)
+        {
+            gear++;
+        }
+        // Auto shift down
+        else if (Rpms < (motorMaxRpm - 5000) && gear > 1)
+        {
+            gear--;
+        }
+    }
+
+        void HandleInputs()
     {
         if (!Input.GetButton("Jump"))  // Check if brake is NOT pressed
         {
