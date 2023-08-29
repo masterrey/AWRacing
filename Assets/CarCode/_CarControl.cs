@@ -117,14 +117,19 @@ public class _CarControl : MonoBehaviour
             ApplyBrake(false);
             drift = false;
         }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+            transform.rotation = Quaternion.identity;
+        }
 
     }
 
     void Drift()
     {
         var locVel = transform.InverseTransformDirection(rb.velocity);
-        Debug.Log(locVel.x);
-        if (Mathf.Abs(locVel.x) > 5)
+        
+        if (Mathf.Abs(locVel.x) > 9)
         {
             if (!drift)
             {
@@ -132,7 +137,7 @@ public class _CarControl : MonoBehaviour
                 angvel = rb.angularVelocity;
             }
             drift = true;
-            Vector3 newvel = (vel + transform.forward * vel.magnitude) * 0.5f;
+            Vector3 newvel = (vel + transform.forward * vel.magnitude) * 0.6f;
             rb.velocity = new Vector3(newvel.x, rb.velocity.y, newvel.z);
             transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * 30);
             rb.angularVelocity = angvel * 0.5f;
